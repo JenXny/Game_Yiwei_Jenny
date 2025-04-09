@@ -1,3 +1,113 @@
-[gd_scene format=3 uid="uid://d3ecyxj0kun1v"]
+[gd_scene load_steps=7 format=3 uid="uid://d3ecyxj0kun1v"]
 
-[node name="Tittle + Cover" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://bvn1v1j46aqgv" path="res://Main_Menu.jpg" id="1_padms"]
+[ext_resource type="Texture2D" uid="uid://dpsy2rlvi2prc" path="res://button_start_idle.png" id="2_kco12"]
+[ext_resource type="Texture2D" uid="uid://cf80pqo3q6270" path="res://button_options_idle.png" id="3_57h0d"]
+[ext_resource type="PackedScene" uid="uid://gs3eocxn2fdy" path="res://instrcutions.tscn" id="4_7kem6"]
+[ext_resource type="Texture2D" uid="uid://bqgl6muhcu12l" path="res://button_quit_idle.png" id="4_xteis"]
+
+[sub_resource type="GDScript" id="GDScript_w0qct"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+#connecting button signals
+	$MarginContainer/VBoxContainer/start.connect(\"pressed\",_on_start_pressed)
+	$MarginContainer/VBoxContainer/options.connect(\"pressed\", _on_options_pressed)
+	$MarginContainer/VBoxContainer/quit.connect(\"pressed\", _on_quit_pressed)
+
+#Functions for buttons
+func _on_start_pressed() -> void:
+	if ResourceLoader.exists(\"res://game.tscn\"):
+		get_tree().change_scene_to_file(\"res://game.tscn\")
+	else:
+		print(\"Error: Game scene not found!\")
+
+func _on_options_pressed() -> void:
+		get_tree().change_scene_to_file(\"res://instrcutions.tscn\")
+	
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+"
+
+[node name="Opening" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = SubResource("GDScript_w0qct")
+
+[node name="MainMenu" type="Sprite2D" parent="."]
+position = Vector2(1440, 905.125)
+scale = Vector2(2.25, 2.51354)
+texture = ExtResource("1_padms")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 1440.0
+offset_top = 905.0
+offset_right = 1440.0
+offset_bottom = 905.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/quit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 153.375
+anchor_top = 93.375
+anchor_right = 153.375
+anchor_bottom = 93.375
+offset_left = -126.0
+offset_top = -78.0001
+offset_right = 126.0
+offset_bottom = 77.9999
+texture = ExtResource("4_xteis")
+
+[node name="options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/options"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -150.75
+anchor_top = 94.312
+anchor_right = -150.75
+anchor_bottom = 94.312
+offset_left = -154.0
+offset_top = -75.496
+offset_right = 154.0
+offset_bottom = 75.504
+grow_horizontal = 2
+texture = ExtResource("3_57h0d")
+
+[node name="instructions" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_7kem6")]
+visible = false
+position = Vector2(0, 12)
+
+[node name="start" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/start"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 9.5
+anchor_top = 93.5
+anchor_right = 9.5
+anchor_bottom = 93.5
+offset_left = -152.0
+offset_top = -79.0001
+offset_right = 152.0
+offset_bottom = 78.9999
+texture = ExtResource("2_kco12")
+
+[node name="tittle" type="Sprite2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/start" to="." method="_on_start_pressed"]
