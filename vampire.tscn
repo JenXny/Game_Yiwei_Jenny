@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://fwqvapir3h66"]
+[gd_scene load_steps=48 format=3 uid="uid://fwqvapir3h66"]
 
 [ext_resource type="Texture2D" uid="uid://b6as56vsjwi50" path="res://Dead.png" id="1_ns4pm"]
 [ext_resource type="Texture2D" uid="uid://bssllb3k2bu6j" path="res://Protect.png" id="2_5fcj2"]
@@ -7,6 +7,34 @@
 [ext_resource type="Texture2D" uid="uid://dm1fm3w5mdt6t" path="res://Jump.png" id="5_ftoye"]
 [ext_resource type="Texture2D" uid="uid://dt6dlvvtxa6mc" path="res://Run.png" id="6_derpj"]
 [ext_resource type="Texture2D" uid="uid://4jpc7jjx6s66" path="res://Walk.png" id="7_i8xml"]
+
+[sub_resource type="GDScript" id="GDScript_vhmlh"]
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iagf8"]
 atlas = ExtResource("1_ns4pm")
@@ -316,6 +344,7 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+script = SubResource("GDScript_vhmlh")
 
 [node name="vampire" type="AnimatedSprite2D" parent="."]
 position = Vector2(117.102, 9.99155)
