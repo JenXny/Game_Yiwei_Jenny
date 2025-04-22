@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqjsmq60dpwwh"]
+
+[ext_resource type="Texture2D" uid="uid://bakifm1tsfjh0" path="res://VampAxe.png" id="1_8rjaq"]
+
+[node name="Item 2" type="Node2D"]
+
+[node name="VampAxe" type="Sprite2D" parent="."]
+position = Vector2(1, 12)
+texture = ExtResource("1_8rjaq")

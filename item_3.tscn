@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6t13h8ijftuv"]
+
+[ext_resource type="Texture2D" uid="uid://c188vuyj4p2am" path="res://KeyFly/KeyFly1.jpeg" id="1_50giq"]
+[ext_resource type="Texture2D" uid="uid://dqil7g5f1hdai" path="res://KeyFly/KeyFly2.jpeg" id="2_0jiqw"]
+[ext_resource type="Texture2D" uid="uid://dslaj13ovhowx" path="res://KeyFly/KeyFly3.jpeg" id="3_brt04"]
+[ext_resource type="Texture2D" uid="uid://da7bjpagyf00h" path="res://KeyFly/KeyFly4.jpeg" id="4_aaweh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ienk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_50giq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0jiqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_brt04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_aaweh")
+}],
+"loop": true,
+"name": &"key floating",
+"speed": 5.0
+}]
+
+[node name="Item 3" type="Node2D"]
+
+[node name="Key" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6ienk")
+animation = &"key floating"
+frame_progress = 0.517574

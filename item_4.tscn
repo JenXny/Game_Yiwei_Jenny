@@ -1,0 +1,65 @@
+[gd_scene load_steps=13 format=3 uid="uid://jdstu5ob1oat"]
+
+[ext_resource type="Texture2D" uid="uid://dufoi0x8ksuwx" path="res://Door/Door45.jpeg" id="1_a6nts"]
+[ext_resource type="Texture2D" uid="uid://cftouc5cs0pk8" path="res://Door/Door46.jpeg" id="2_mqdtq"]
+[ext_resource type="Texture2D" uid="uid://d21csm7py4x13" path="res://Door/Door47.jpeg" id="3_pgx23"]
+[ext_resource type="Texture2D" uid="uid://b7io2juupr14h" path="res://Door/Door48.jpeg" id="4_uey2s"]
+[ext_resource type="Texture2D" uid="uid://djvfg0ydn4mtm" path="res://Door/Door49.jpeg" id="5_x0y7c"]
+[ext_resource type="Texture2D" uid="uid://b7efuotqtq05i" path="res://Door/Door50.jpeg" id="6_mkyak"]
+[ext_resource type="Texture2D" uid="uid://6y32eunhpmew" path="res://Door/Door51.jpeg" id="7_vra62"]
+[ext_resource type="Texture2D" uid="uid://diy3njnqbmp7p" path="res://Door/Door52.jpeg" id="8_vdlc3"]
+[ext_resource type="Texture2D" uid="uid://qthdr5lhykpc" path="res://Door/Door54.jpeg" id="9_e4pgd"]
+[ext_resource type="Texture2D" uid="uid://bl5vwy2wwfg3g" path="res://Door/Door55.jpeg" id="10_ncedk"]
+[ext_resource type="Texture2D" uid="uid://dxmf1uf1bl1lr" path="res://Door/Door56.jpeg" id="11_rnq2d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wme04"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_a6nts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mqdtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pgx23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uey2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_x0y7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mkyak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vra62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vdlc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e4pgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e4pgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ncedk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rnq2d")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Item 4" type="Node2D"]
+
+[node name="door" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, -2)
+sprite_frames = SubResource("SpriteFrames_wme04")
+animation = &"new_animation"
+frame_progress = 0.146699
