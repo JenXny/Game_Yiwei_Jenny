@@ -1,8 +1,96 @@
-[gd_scene load_steps=2 format=3 uid="uid://vwrcjtyvsh7x"]
+[gd_scene load_steps=14 format=3 uid="uid://vwrcjtyvsh7x"]
+
+[ext_resource type="Texture2D" uid="uid://b3dbyy3wp7v0x" path="res://Pixel Chest Pack/Metal Chest/Metal Chest - SpriteSheet.png" id="1_a62m6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ex555"]
+atlas = ExtResource("1_a62m6")
+region = Rect2(0, 0, 72, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mn4b"]
+atlas = ExtResource("1_a62m6")
+region = Rect2(72, 0, 72, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_er7lr"]
+atlas = ExtResource("1_a62m6")
+region = Rect2(144, 0, 72, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3hsu"]
+atlas = ExtResource("1_a62m6")
+region = Rect2(216, 0, 72, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yjph3"]
+atlas = ExtResource("1_a62m6")
+region = Rect2(288, 0, 72, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omlop"]
+atlas = ExtResource("1_a62m6")
+region = Rect2(360, 0, 72, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3xsp"]
+atlas = ExtResource("1_a62m6")
+region = Rect2(432, 0, 72, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8n8hb"]
+atlas = ExtResource("1_a62m6")
+region = Rect2(504, 0, 72, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a2hw"]
+atlas = ExtResource("1_a62m6")
+region = Rect2(576, 0, 72, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwceq"]
+atlas = ExtResource("1_a62m6")
+region = Rect2(648, 0, 72, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lpxx"]
+atlas = ExtResource("1_a62m6")
+region = Rect2(720, 0, 72, 62)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fwefu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ex555")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mn4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_er7lr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3hsu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yjph3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omlop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3xsp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8n8hb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a2hw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwceq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lpxx")
+}],
+"loop": true,
+"name": &"Chest",
+"speed": 5.0
+}]
 
 [node name="Item 5" type="Node2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Chest" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fwefu")
+animation = &"Chest"
+frame = 2
+frame_progress = 0.906305

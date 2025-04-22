@@ -5,6 +5,6 @@
 [node name="Item 1" type="Node2D"]
 
 [node name="Book" type="Sprite2D" parent="."]
-position = Vector2(0, -0.999996)
-scale = Vector2(0.0497573, 0.0420027)
+position = Vector2(1, 4.76837e-07)
+scale = Vector2(0.0291936, 0.0263777)
 texture = ExtResource("1_a418m")

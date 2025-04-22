@@ -347,13 +347,13 @@ animations = [{
 script = SubResource("GDScript_vhmlh")
 
 [node name="vampire" type="AnimatedSprite2D" parent="."]
-position = Vector2(117.102, 9.99155)
+position = Vector2(8, -24)
 scale = Vector2(0.959559, 0.881059)
 sprite_frames = SubResource("SpriteFrames_1j3wd")
 animation = &"walk"
 frame_progress = 0.565677
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(111, 9)
+position = Vector2(4, -24)
 scale = Vector2(0.959559, 0.881059)
 polygon = PackedVector2Array(-11, -11, 0, -11, 11, -11, 3, 16.1963, 12, 65.865, -1, 63.7055, -8, 62.6258, -22, 28.0736)

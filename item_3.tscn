@@ -28,6 +28,9 @@ animations = [{
 [node name="Item 3" type="Node2D"]
 
 [node name="Key" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.546875, 0.5625)
 sprite_frames = SubResource("SpriteFrames_6ienk")
 animation = &"key floating"
-frame_progress = 0.517574
+frame = 2
+frame_progress = 0.97934
