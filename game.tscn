@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=4 uid="uid://cfppr0cxbgyy0"]
+[gd_scene load_steps=17 format=4 uid="uid://cfppr0cxbgyy0"]
 
+[ext_resource type="Script" path="res://game.gd" id="1_k1pet"]
 [ext_resource type="Texture2D" uid="uid://cfx8fomcwanpm" path="res://TidyTiles_128x128.png" id="1_tikwo"]
 [ext_resource type="Texture2D" uid="uid://qhbahfg4cna3" path="res://StoneWalls_128x256.png" id="2_0baie"]
 [ext_resource type="Texture2D" uid="uid://cvkjsp1wpq1p3" path="res://StoneTiles_128x128.png" id="3_nlw0j"]
@@ -7,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://buidpufonjm21" path="res://RF_Catacombs_v1.0/decorative.png" id="4_nr3q0"]
 [ext_resource type="Texture2D" uid="uid://b2vt1vh1rkyao" path="res://RF_Catacombs_v1.0/mainlevbuild.png" id="5_b244q"]
 [ext_resource type="PackedScene" uid="uid://fwqvapir3h66" path="res://vampire.tscn" id="5_x8wb1"]
+[ext_resource type="Texture2D" uid="uid://b8ulsomu3al8i" path="res://Book.png" id="9_g43m1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_klxk0"]
 texture = ExtResource("1_tikwo")
@@ -3794,8 +3796,10 @@ func _physics_process(delta: float) -> void:
 "
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_k1pet")
 
 [node name="vampire" parent="." instance=ExtResource("5_x8wb1")]
+top_level = true
 position = Vector2(2082, 232)
 
 [node name="Game Map" type="TileMapLayer" parent="."]
@@ -3804,8 +3808,13 @@ tile_map_data = PackedByteArray("AAAIAAwABAAxABcAAGAIAA0ABAAyABcAAGAIAA4ABAAxABc
 tile_set = SubResource("TileSet_1qkh0")
 
 [node name="player" parent="." instance=ExtResource("4_eivxh")]
-position = Vector2(1517, 941)
+position = Vector2(19, 934)
 script = SubResource("GDScript_gnl6c")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="player"]
 visible = false
+
+[node name="Book" type="Sprite2D" parent="."]
+position = Vector2(147, 987)
+scale = Vector2(0.0490591, 0.0490591)
+texture = ExtResource("9_g43m1")
