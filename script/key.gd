@@ -6,6 +6,7 @@ extends Area2D
 
 
 func _on_body_entered(_body: Node2D) -> void:
+	PlayerValues.alter_keys(1)
 	key_collected_sound.play()
 	sprite_2d.hide()
 	set_deferred("monitoring",false)
