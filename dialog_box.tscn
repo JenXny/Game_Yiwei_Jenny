@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=3 uid="uid://c02lmbpki7ohb"]
+
+[ext_resource type="Script" path="res://dialog_box.gd" id="1_1fcth"]
+[ext_resource type="Texture2D" uid="uid://di2gf68m4wanj" path="res://Hexany's 1-bit UI Panels/panels_2.png" id="1_yfbbd"]
+[ext_resource type="Texture2D" uid="uid://53wtmpa1gt17" path="res://pngtree-empty-book-in-pixel-art-style-png-image_12655351.png" id="2_sc2oc"]
+[ext_resource type="Texture2D" uid="uid://bm2n4bmxriv3b" path="res://nextIndicator.png" id="3_1ds0t"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h0ugq"]
+content_margin_left = 180.0
+content_margin_top = 25.0
+content_margin_bottom = 45.0
+texture = ExtResource("1_yfbbd")
+texture_margin_left = 72.0
+texture_margin_top = 64.0
+texture_margin_right = 72.0
+texture_margin_bottom = 64.0
+region_rect = Rect2(128, 24, 104, 104)
+
+[sub_resource type="Animation" id="Animation_moqb3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1101, 118)]
+}
+
+[sub_resource type="Animation" id="Animation_bwx8q"]
+resource_name = "new_animation"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1101, 118), Vector2(1101, 115)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7h7hh"]
+_data = {
+"RESET": SubResource("Animation_moqb3"),
+"new_animation": SubResource("Animation_bwx8q")
+}
+
+[node name="DialogBox" type="CanvasLayer"]
+script = ExtResource("1_1fcth")
+
+[node name="Content" type="Label" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 1
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_h0ugq")
+text = "Instuctions:
+1
+2
+3
+4"
+autowrap_mode = 3
+max_lines_visible = 3
+
+[node name="Avatar" type="TextureRect" parent="Content"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 166.0
+offset_bottom = 143.0
+texture = ExtResource("2_sc2oc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NextIndicator" type="TextureRect" parent="Content"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -51.0
+offset_top = -47.0
+offset_right = -14.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_1ds0t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Content/NextIndicator"]
+libraries = {
+"": SubResource("AnimationLibrary_7h7hh")
+}
+autoplay = "new_animation"

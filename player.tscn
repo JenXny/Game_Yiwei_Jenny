@@ -1,8 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://banlc3mt4saks"]
+[gd_scene load_steps=30 format=3 uid="uid://banlc3mt4saks"]
 
 [ext_resource type="Texture2D" uid="uid://biwqpuf1lsl45" path="res://girl dialoogue.png" id="1_16shg"]
 [ext_resource type="Texture2D" uid="uid://r7i2jg3ov25c" path="res://girl idle.png" id="2_ahq3u"]
 [ext_resource type="Texture2D" uid="uid://dxblvfs0pqocv" path="res://girl_walk.png" id="3_a3feb"]
+[ext_resource type="Script" path="res://animated_sprite_2d.gd" id="4_jts23"]
 
 [sub_resource type="GDScript" id="GDScript_it865"]
 script/source = "extends CharacterBody2D
@@ -214,13 +215,19 @@ animations = [{
 [node name="player" type="CharacterBody2D"]
 script = SubResource("GDScript_it865")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["player"]]
+texture_filter = 1
 position = Vector2(0, 7)
 sprite_frames = SubResource("SpriteFrames_o0grp")
-animation = &"dialogue"
-frame_progress = 0.0935348
+animation = &"walk"
+autoplay = "idle"
+frame = 4
+frame_progress = 0.620152
+script = ExtResource("4_jts23")
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
+position = Vector2(0, -40)
+zoom = Vector2(1.5, 1.5)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(0, 36.5)

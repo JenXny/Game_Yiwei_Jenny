@@ -3804,7 +3804,8 @@ tile_map_data = PackedByteArray("AAAIAAwABAAxABcAAGAIAA0ABAAyABcAAGAIAA4ABAAxABc
 tile_set = SubResource("TileSet_1qkh0")
 
 [node name="player" parent="." instance=ExtResource("4_eivxh")]
-position = Vector2(1517, 941)
+position = Vector2(32, 953)
+collision_layer = 2
 script = SubResource("GDScript_gnl6c")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="player"]

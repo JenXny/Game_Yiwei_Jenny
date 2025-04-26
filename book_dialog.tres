@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Dialog" load_steps=5 format=3 uid="uid://dxerjb66t8ro7"]
+
+[ext_resource type="Script" path="res://line.gd" id="1_rmn6b"]
+[ext_resource type="Script" path="res://dialog.gd" id="2_qnxi5"]
+
+[sub_resource type="Resource" id="Resource_3q6jn"]
+script = ExtResource("1_rmn6b")
+avatar = "book"
+text = "Content here."
+
+[sub_resource type="Resource" id="Resource_fu700"]
+script = ExtResource("1_rmn6b")
+avatar = "book"
+text = "Content here."
+
+[resource]
+script = ExtResource("2_qnxi5")
+lines = Array[ExtResource("1_rmn6b")]([SubResource("Resource_3q6jn"), SubResource("Resource_fu700")])

@@ -347,11 +347,14 @@ animations = [{
 script = SubResource("GDScript_vhmlh")
 
 [node name="vampire" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(8, -24)
 scale = Vector2(0.959559, 0.881059)
 sprite_frames = SubResource("SpriteFrames_1j3wd")
-animation = &"walk"
-frame_progress = 0.565677
+animation = &"idle"
+autoplay = "idle"
+frame = 1
+frame_progress = 0.610362
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(4, -24)
