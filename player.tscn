@@ -10,6 +10,9 @@ script/source = "extends CharacterBody2D
 
 const SPEED = 300.0 
 
+func _ready() -> void:
+	print(PlayerValues.keys_amount)
+
 func _physics_process(delta: float) -> void:
 
 	var direction = Input.get_vector(\"move_left\", \"move_right\", \"move_up\", \"move_down\")
@@ -196,7 +199,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 8.0
+"speed": 18.0
 }]
 
 [node name="player" type="CharacterBody2D"]
@@ -207,13 +210,12 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_o0grp")
 animation = &"walk"
 autoplay = "idle"
-frame = 4
-frame_progress = 0.620152
+frame = 7
+frame_progress = 0.356579
 script = ExtResource("4_jts23")
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
 position = Vector2(0, -40)
-zoom = Vector2(1.5, 1.5)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 texture_filter = 1
