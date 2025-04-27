@@ -4,7 +4,7 @@ extends Node
 var keys_amount = 0
 
 signal keys_value_changed
-signal reset_world
+signal reset_world(body : Node2D)
 
 func alter_keys(value):
 	keys_amount += value

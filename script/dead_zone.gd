@@ -6,6 +6,7 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	print("You died.")
 	timer.start()
+	PlayerValues.emit_signal("reset_world", body)
 
 
 func _on_timer_timeout() -> void:
