@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqj3mdb50ycjs"]
+[gd_scene load_steps=5 format=3 uid="uid://cqj3mdb50ycjs"]
 
 [ext_resource type="Script" path="res://script/ui.gd" id="1_ifjib"]
 [ext_resource type="FontFile" uid="uid://brxip7pq1dpbc" path="res://Tagesschrift-Regular.ttf" id="1_oaeru"]
 [ext_resource type="Texture2D" uid="uid://dsl7u474rskre" path="res://Hexany's 1-bit UI Panels/Panels/Transparent/bone_breakers.png" id="2_8xg87"]
+[ext_resource type="Texture2D" uid="uid://bcovkughj6dqx" path="res://ObjectAssets/KEY.png" id="4_jgds7"]
 
 [node name="ui" type="CanvasLayer"]
 script = ExtResource("1_ifjib")
@@ -24,11 +25,16 @@ offset_left = 8.0
 offset_top = 11.0
 offset_right = 88.0
 offset_bottom = 44.0
-theme_override_colors/font_color = Color(1, 0.383333, 0, 1)
+theme_override_colors/font_color = Color(1, 0.79, 0.3, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_oaeru")
 theme_override_font_sizes/font_size = 25
-text = "Keys: 0"
+text = "       : 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="keypng" type="Sprite2D" parent="."]
+position = Vector2(32, 29)
+scale = Vector2(2.46875, 2.46875)
+texture = ExtResource("4_jgds7")

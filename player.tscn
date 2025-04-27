@@ -7,14 +7,13 @@
 
 [sub_resource type="GDScript" id="GDScript_it865"]
 script/source = "extends CharacterBody2D
-
+var can_control : bool = true
 const SPEED = 300.0 
 
 func _ready() -> void:
 	print(PlayerValues.keys_amount)
 
 func _physics_process(delta: float) -> void:
-
 	var direction = Input.get_vector(\"move_left\", \"move_right\", \"move_up\", \"move_down\")
 	
 
@@ -202,7 +201,7 @@ animations = [{
 "speed": 18.0
 }]
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 script = SubResource("GDScript_it865")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://dspgxm5pbkx4l"]
+
+[ext_resource type="Texture2D" uid="uid://dyji2e16fg4hw" path="res://ObjectAssets/Enemy Characters Pack SpriteSheet[20x20][FREE] - RottingPixels/enemies-spritesheet.png" id="1_ljbq7"]
+[ext_resource type="PackedScene" uid="uid://7scfwr3jeapt" path="res://scenes/dead_zone.tscn" id="2_hvwlh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sehf"]
+atlas = ExtResource("1_ljbq7")
+region = Rect2(0, 80, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bu453"]
+atlas = ExtResource("1_ljbq7")
+region = Rect2(20, 80, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d1i7m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sehf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bu453")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qlp8o"]
+radius = 8.0
+
+[node name="PurpleEnemy" type="Node2D"]
+scale = Vector2(2.68, 2.68)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
+sprite_frames = SubResource("SpriteFrames_d1i7m")
+autoplay = "default"
+frame_progress = 0.54009
+
+[node name="DeadZone" parent="." instance=ExtResource("2_hvwlh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_qlp8o")

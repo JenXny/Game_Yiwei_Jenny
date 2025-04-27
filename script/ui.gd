@@ -6,4 +6,4 @@ func _ready() -> void:
 	PlayerValues.keys_value_changed.connect(on_keys_value_changed)
 	
 func on_keys_value_changed():
-	keys_label.text = "Keys :" + str(PlayerValues.keys_amount)
+	keys_label.text = "       : " + str(PlayerValues.keys_amount)

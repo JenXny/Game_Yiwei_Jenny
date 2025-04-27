@@ -4,6 +4,7 @@ extends Node
 var keys_amount = 0
 
 signal keys_value_changed
+signal reset_world
 
 func alter_keys(value):
 	keys_amount += value
