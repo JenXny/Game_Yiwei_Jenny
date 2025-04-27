@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://dx8yek3nqyvep"]
+
+[ext_resource type="Texture2D" uid="uid://dyji2e16fg4hw" path="res://ObjectAssets/Enemy Characters Pack SpriteSheet[20x20][FREE] - RottingPixels/enemies-spritesheet.png" id="1_47kuv"]
+[ext_resource type="Script" path="res://script/slime.gd" id="1_vglda"]
+[ext_resource type="PackedScene" uid="uid://7scfwr3jeapt" path="res://scenes/dead_zone.tscn" id="2_17506"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y54jr"]
+atlas = ExtResource("1_47kuv")
+region = Rect2(0, 40, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cwrm"]
+atlas = ExtResource("1_47kuv")
+region = Rect2(20, 40, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p0x5e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y54jr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cwrm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_whl76"]
+radius = 9.0
+height = 34.0
+
+[node name="Slime" type="Node2D"]
+script = ExtResource("1_vglda")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, -13)
+scale = Vector2(1.8, 1.8)
+sprite_frames = SubResource("SpriteFrames_p0x5e")
+autoplay = "default"
+frame_progress = 0.432439
+
+[node name="DeadZone" parent="." instance=ExtResource("2_17506")]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
+position = Vector2(7, -3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_whl76")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(4, 0)
+target_position = Vector2(22, 0)
+collision_mask = 4
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(4, 0)
+target_position = Vector2(-20, 0)
+collision_mask = 4

@@ -1,0 +1,140 @@
+[gd_scene load_steps=21 format=3 uid="uid://d0i1wtduy2aai"]
+
+[ext_resource type="Texture2D" uid="uid://bdk2e16pc55j5" path="res://atlas_eyeball_9variations.png" id="1_to4b6"]
+[ext_resource type="PackedScene" uid="uid://7scfwr3jeapt" path="res://scenes/dead_zone.tscn" id="2_f4s4o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyji2"]
+atlas = ExtResource("1_to4b6")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2nun"]
+atlas = ExtResource("1_to4b6")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ekxu"]
+atlas = ExtResource("1_to4b6")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgxiu"]
+atlas = ExtResource("1_to4b6")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66hus"]
+atlas = ExtResource("1_to4b6")
+region = Rect2(128, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p480v"]
+atlas = ExtResource("1_to4b6")
+region = Rect2(160, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3pw7"]
+atlas = ExtResource("1_to4b6")
+region = Rect2(192, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_js8jj"]
+atlas = ExtResource("1_to4b6")
+region = Rect2(224, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6eu4"]
+atlas = ExtResource("1_to4b6")
+region = Rect2(256, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivwef"]
+atlas = ExtResource("1_to4b6")
+region = Rect2(288, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hxkr"]
+atlas = ExtResource("1_to4b6")
+region = Rect2(320, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecvkv"]
+atlas = ExtResource("1_to4b6")
+region = Rect2(352, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1r3mv"]
+atlas = ExtResource("1_to4b6")
+region = Rect2(384, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wawpu"]
+atlas = ExtResource("1_to4b6")
+region = Rect2(416, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg53t"]
+atlas = ExtResource("1_to4b6")
+region = Rect2(448, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwnru"]
+atlas = ExtResource("1_to4b6")
+region = Rect2(480, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2f8n5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyji2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2nun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ekxu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgxiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66hus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p480v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3pw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_js8jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6eu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivwef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hxkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecvkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1r3mv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wawpu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jg53t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwnru")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ch4y6"]
+radius = 12.0
+
+[node name="GreenEyeBall" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2f8n5")
+autoplay = "default"
+frame_progress = 0.715682
+
+[node name="DeadZone" parent="." instance=ExtResource("2_f4s4o")]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
+shape = SubResource("CircleShape2D_ch4y6")

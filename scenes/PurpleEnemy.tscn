@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dspgxm5pbkx4l"]
+[gd_scene load_steps=8 format=3 uid="uid://dspgxm5pbkx4l"]
 
 [ext_resource type="Texture2D" uid="uid://dyji2e16fg4hw" path="res://ObjectAssets/Enemy Characters Pack SpriteSheet[20x20][FREE] - RottingPixels/enemies-spritesheet.png" id="1_ljbq7"]
+[ext_resource type="Script" path="res://script/purple_enemy.gd" id="1_rhxpi"]
 [ext_resource type="PackedScene" uid="uid://7scfwr3jeapt" path="res://scenes/dead_zone.tscn" id="2_hvwlh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7sehf"]
@@ -30,6 +31,7 @@ radius = 8.0
 
 [node name="PurpleEnemy" type="Node2D"]
 scale = Vector2(2.68, 2.68)
+script = ExtResource("1_rhxpi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10)
@@ -38,7 +40,18 @@ autoplay = "default"
 frame_progress = 0.54009
 
 [node name="DeadZone" parent="." instance=ExtResource("2_hvwlh")]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadZone"]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_qlp8o")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, -7.83582)
+target_position = Vector2(15.6716, 0)
+collision_mask = 4
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, -7.83582)
+target_position = Vector2(-15.2985, 0)
+collision_mask = 4

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://7scfwr3jeapt"]
+[gd_scene load_steps=3 format=3 uid="uid://7scfwr3jeapt"]
 
 [ext_resource type="Script" path="res://script/dead_zone.gd" id="1_6e1n1"]
+[ext_resource type="AudioStream" uid="uid://cacn0ughheih8" path="res://audio/short.wav" id="2_1aq6f"]
 
 [node name="DeadZone" type="Area2D"]
 script = ExtResource("1_6e1n1")
@@ -8,6 +9,9 @@ script = ExtResource("1_6e1n1")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.074
 one_shot = true
+
+[node name="DeadAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1aq6f")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
