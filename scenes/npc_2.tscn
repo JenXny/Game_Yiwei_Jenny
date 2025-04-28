@@ -1,0 +1,149 @@
+[gd_scene load_steps=14 format=3 uid="uid://cgl0hbsa5ft3x"]
+
+[ext_resource type="Texture2D" uid="uid://bitng6hq3tj18" path="res://ObjectAssets/Basic Asset Pack/Basic Monster Animations/Death Slime/DeathSlime.png" id="1_lfnng"]
+[ext_resource type="Script" path="res://script/npc_2.gd" id="1_yq7db"]
+[ext_resource type="FontFile" uid="uid://brxip7pq1dpbc" path="res://Tagesschrift-Regular.ttf" id="2_3825w"]
+[ext_resource type="AudioStream" uid="uid://cikknob0702oq" path="res://audio/creepy-little-creature-2873.wav" id="3_irwtm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fctl1"]
+atlas = ExtResource("1_lfnng")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rypl"]
+atlas = ExtResource("1_lfnng")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1ai1"]
+atlas = ExtResource("1_lfnng")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v60al"]
+atlas = ExtResource("1_lfnng")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xmpgu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fctl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rypl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1ai1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v60al")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ws058"]
+size = Vector2(102.632, 288.421)
+
+[sub_resource type="Animation" id="Animation_5cqac"]
+resource_name = "npc_dialog2"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dialog2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.2, 0.25, 0.35, 0.4, 0.5, 0.6, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.073, 0.138, 0.211, 0.276, 0.365, 0.47, 0.51, 0.591, 0.656, 0.745, 0.801, 0.833, 0.906, 0.946, 1.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.05),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_button_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_d7jat"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dialog2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.073]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1hcos"]
+_data = {
+"RESET": SubResource("Animation_d7jat"),
+"npc_dialog2": SubResource("Animation_5cqac")
+}
+
+[node name="NPC2" type="Area2D"]
+collision_layer = 7
+collision_mask = 2
+script = ExtResource("1_yq7db")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(38.7187, -15.2802)
+scale = Vector2(-5.96984, 5.66002)
+sprite_frames = SubResource("SpriteFrames_xmpgu")
+autoplay = "default"
+frame_progress = 0.475822
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-78, -14)
+scale = Vector2(2.375, 2.375)
+shape = SubResource("RectangleShape2D_ws058")
+
+[node name="dialog2" type="RichTextLabel" parent="."]
+offset_left = -103.0
+offset_top = -121.0
+offset_right = 144.0
+offset_bottom = -15.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_3825w")
+theme_override_font_sizes/normal_font_size = 24
+text = "Turn back now, 
+or I'll eat anyone who dares to pass."
+visible_characters = 3
+visible_ratio = 0.073
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1hcos")
+}
+
+[node name="threat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_irwtm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

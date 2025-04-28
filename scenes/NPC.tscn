@@ -1,0 +1,148 @@
+[gd_scene load_steps=14 format=3 uid="uid://cwxpcb1aw3sd5"]
+
+[ext_resource type="Script" path="res://script/npc.gd" id="1_hgwk8"]
+[ext_resource type="Texture2D" uid="uid://cfxes0q2w3sgj" path="res://ObjectAssets/Basic Asset Pack/Basic Monster Animations/Humongous Ettin/HumongousEttin.png" id="1_ppqhb"]
+[ext_resource type="FontFile" uid="uid://brxip7pq1dpbc" path="res://Tagesschrift-Regular.ttf" id="2_w04xh"]
+[ext_resource type="AudioStream" uid="uid://dqaok0h7l8od" path="res://audio/npc.wav" id="4_n6sa5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_baijv"]
+atlas = ExtResource("1_ppqhb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_im85l"]
+atlas = ExtResource("1_ppqhb")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkdji"]
+atlas = ExtResource("1_ppqhb")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c45a"]
+atlas = ExtResource("1_ppqhb")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y775w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_baijv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_im85l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkdji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c45a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qfd7c"]
+radius = 143.785
+
+[sub_resource type="Animation" id="Animation_ibvfw"]
+resource_name = "npc_dialog"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dialog:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.113, 0.258, 0.347, 0.42, 0.533, 0.638, 0.751, 0.864, 0.88, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Dialog:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_button_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_w3cg3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dialog:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.113]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uns1c"]
+_data = {
+"RESET": SubResource("Animation_w3cg3"),
+"npc_dialog": SubResource("Animation_ibvfw")
+}
+
+[node name="NPC" type="Area2D"]
+collision_layer = 7
+collision_mask = 2
+script = ExtResource("1_hgwk8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(49.5, 148.611)
+scale = Vector2(-7.1575, 7.17359)
+sprite_frames = SubResource("SpriteFrames_y775w")
+autoplay = "default"
+frame_progress = 0.508088
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-61, 80)
+shape = SubResource("CircleShape2D_qfd7c")
+
+[node name="Dialog" type="RichTextLabel" parent="."]
+offset_left = -95.0
+offset_top = 47.0
+offset_right = 316.0
+offset_bottom = 87.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_w04xh")
+theme_override_font_sizes/normal_font_size = 24
+text = "Wanna leave? Talk to our master"
+visible_characters = 3
+visible_ratio = 0.113
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uns1c")
+}
+
+[node name="npc_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_n6sa5")
+volume_db = -9.512
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
