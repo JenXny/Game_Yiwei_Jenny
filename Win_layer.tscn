@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://dax4oi7bk7utd"]
+
+[ext_resource type="Script" path="res://win_layer.gd" id="1_5yh8i"]
+[ext_resource type="Texture2D" uid="uid://bwwmchmtblddw" path="res://Secondary_Menu.jpg" id="2_nteua"]
+[ext_resource type="Texture2D" uid="uid://3xf4rn82exvs" path="res://button_return_idle.png" id="3_73icq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cxu5u"]
+
+[node name="Win_layer" type="CanvasLayer"]
+script = ExtResource("1_5yh8i")
+
+[node name="end screen" type="Sprite2D" parent="."]
+position = Vector2(1475, 965)
+scale = Vector2(2.31562, 2.68889)
+texture = ExtResource("2_nteua")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 841.0
+offset_top = 894.0
+offset_right = 2142.0
+offset_bottom = 1385.0
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.556352, 0, 0.000954818, 1)
+self_modulate = Color(0.914146, 0.0737986, 1.07813e-05, 1)
+offset_left = -2813.0
+offset_top = -246.0
+offset_right = -1955.0
+offset_bottom = 32.0
+scale = Vector2(10, 10)
+text = "You Win!"
+label_settings = SubResource("LabelSettings_cxu5u")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="return" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 1.392
+anchor_top = 2.524
+anchor_right = 1.392
+anchor_bottom = 2.524
+offset_left = -416.584
+offset_top = -131.552
+offset_right = -408.584
+offset_bottom = -123.552
+
+[node name="TextureRect" type="TextureRect" parent="return"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 17.855
+anchor_top = 12.5
+anchor_right = 17.855
+anchor_bottom = 12.5
+offset_left = -107.84
+offset_top = -89.0
+offset_right = 434.16
+offset_bottom = 89.0
+texture = ExtResource("3_73icq")
+
+[connection signal="pressed" from="return" to="." method="_on_return_pressed"]
