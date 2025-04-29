@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://gs3eocxn2fdy"]
+[gd_scene load_steps=5 format=3 uid="uid://gs3eocxn2fdy"]
 
 [ext_resource type="Texture2D" uid="uid://bwwmchmtblddw" path="res://Secondary_Menu.jpg" id="1_4utck"]
 [ext_resource type="Script" path="res://instrcutions.gd" id="1_sfg82"]
 [ext_resource type="Texture2D" uid="uid://dpsy2rlvi2prc" path="res://button_start_idle.png" id="2_03rpp"]
+[ext_resource type="Texture2D" uid="uid://c2htj8l7xt37u" path="res://instructions.png" id="3_ar2lo"]
 
 [node name="instructions" type="Node2D"]
 script = ExtResource("1_sfg82")
@@ -13,6 +14,9 @@ scale = Vector2(2.26484, 2.62778)
 texture = ExtResource("1_4utck")
 
 [node name="instructions" type="Sprite2D" parent="."]
+position = Vector2(1514, 1268)
+scale = Vector2(0.700784, 0.573333)
+texture = ExtResource("3_ar2lo")
 
 [node name="start" type="Button" parent="."]
 offset_left = -853.0

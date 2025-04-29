@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
-	$start.connect("pressed", _on_start_pressed)
+	$start.connect("pressed", _on_play_pressed)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
