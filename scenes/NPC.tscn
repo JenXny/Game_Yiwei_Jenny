@@ -44,6 +44,21 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_qfd7c"]
 radius = 143.785
 
+[sub_resource type="Animation" id="Animation_w3cg3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Dialog:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.113]
+}
+
 [sub_resource type="Animation" id="Animation_ibvfw"]
 resource_name = "npc_dialog"
 step = 0.05
@@ -84,21 +99,6 @@ tracks/2/keys = {
 "args": [],
 "method": &"play_button_sound"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_w3cg3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Dialog:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.113]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uns1c"]

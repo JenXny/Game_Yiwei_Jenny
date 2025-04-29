@@ -224,4 +224,4 @@ zoom = Vector2(2, 2)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 texture_filter = 1
 scale = Vector2(1, 2.74554)
-polygon = PackedVector2Array(-16, -2.54959, -17, 4.37073, -19, 15.6618, -15, 23.6748, -1, 24.039, 12, 23.6748, 7, 4.37073, 10, -2.54959, -2, -4.0065)
+polygon = PackedVector2Array(-10, -1.09268, -12, 4.73495, -11, 15.6618, -14, 22.5821, 0, 22.9463, 10, 22.9463, 6, 4.73495, 5, -0.364227, -2, -1.09268)
