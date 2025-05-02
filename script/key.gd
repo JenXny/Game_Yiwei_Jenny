@@ -13,4 +13,4 @@ func _on_body_entered(_body: Node2D) -> void:
 
 func _on_key_collected_finished() -> void:
 	queue_free()
-	
+	get_tree().change_scene_to_file("res://Win_layer.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://cfppr0cxbgyy0"]
+[gd_scene load_steps=59 format=4 uid="uid://cfppr0cxbgyy0"]
 
 [ext_resource type="Script" path="res://script/game.gd" id="1_4o8pb"]
 [ext_resource type="Texture2D" uid="uid://cfx8fomcwanpm" path="res://TidyTiles_128x128.png" id="1_tikwo"]
@@ -29,8 +29,8 @@
 [ext_resource type="PackedScene" uid="uid://ctuac8fyndjjl" path="res://scenes/eyeball.tscn" id="20_08ah0"]
 [ext_resource type="AudioStream" uid="uid://e4pafbann38" path="res://audio/music.mp3" id="21_rh7wt"]
 [ext_resource type="PackedScene" uid="uid://d0i1wtduy2aai" path="res://scenes/green_eye_ball.tscn" id="23_s2t1y"]
-[ext_resource type="PackedScene" uid="uid://c1jnqjald5qnw" path="res://Win_layer.tscn" id="25_miyqq"]
-[ext_resource type="PackedScene" uid="uid://lejqnw0gr5fl" path="res://game_over_layer.tscn" id="26_7645v"]
+[ext_resource type="PackedScene" uid="uid://lejqnw0gr5fl" path="res://game_over_layer.tscn" id="25_ynmop"]
+[ext_resource type="PackedScene" uid="uid://c1jnqjald5qnw" path="res://Win_layer.tscn" id="26_ifchl"]
 [ext_resource type="PackedScene" uid="uid://cgl0hbsa5ft3x" path="res://scenes/npc_2.tscn" id="28_or21g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_klxk0"]
@@ -7219,10 +7219,6 @@ height = 548.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ovha"]
 size = Vector2(70.5, 68.5)
 
-[sub_resource type="GDScript" id="GDScript_uirny"]
-script/source = "extends CanvasLayer
-"
-
 [node name="Game" type="Node2D"]
 script = ExtResource("1_4o8pb")
 
@@ -7297,12 +7293,11 @@ position = Vector2(106, 988)
 
 [node name="ui" parent="." instance=ExtResource("9_3cv78")]
 
-[node name="Win_layer" parent="." instance=ExtResource("25_miyqq")]
+[node name="game_over_layer" parent="." instance=ExtResource("25_ynmop")]
 visible = false
 
-[node name="game_over_layer" parent="." instance=ExtResource("26_7645v")]
+[node name="Win_layer" parent="." instance=ExtResource("26_ifchl")]
 visible = false
-script = SubResource("GDScript_uirny")
 
 [node name="PurpleEnemy" parent="." instance=ExtResource("16_jvwks")]
 position = Vector2(272, 451)
