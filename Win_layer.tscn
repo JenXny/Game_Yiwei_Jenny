@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1jnqjald5qnw"]
+[gd_scene load_steps=4 format=3 uid="uid://c1jnqjald5qnw"]
 
 [ext_resource type="Script" path="res://win_layer.gd" id="1_gj60x"]
-[ext_resource type="Texture2D" uid="uid://bwwmchmtblddw" path="res://Secondary_Menu.jpg" id="2_nteua"]
-[ext_resource type="Texture2D" uid="uid://3xf4rn82exvs" path="res://button_return_idle.png" id="3_73icq"]
+[ext_resource type="Texture2D" uid="uid://bdlt0ps8tf3i4" path="res://win.jpg" id="2_1p7gk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cxu5u"]
 
@@ -10,9 +9,9 @@
 script = ExtResource("1_gj60x")
 
 [node name="end screen" type="Sprite2D" parent="."]
-position = Vector2(1475, 965)
-scale = Vector2(2.31562, 2.68889)
-texture = ExtResource("2_nteua")
+position = Vector2(1458, 962)
+scale = Vector2(1.69773, 1.1125)
+texture = ExtResource("2_1p7gk")
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 1125.0
@@ -23,38 +22,13 @@ offset_bottom = 1292.0
 [node name="Label" type="Label" parent="."]
 modulate = Color(0.669673, 0.676457, 0.914779, 1)
 self_modulate = Color(0.558408, 0.6152, 0.884193, 1)
-offset_left = -637.0
-offset_top = 407.0
-offset_right = 215.0
-offset_bottom = 682.0
+offset_left = -699.0
+offset_top = 731.0
+offset_right = 153.0
+offset_bottom = 1006.0
 scale = Vector2(5, 5)
 text = "You Win!"
 label_settings = SubResource("LabelSettings_cxu5u")
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
-
-[node name="return" type="Button" parent="."]
-anchors_preset = -1
-anchor_left = 1.401
-anchor_top = 2.214
-anchor_right = 1.401
-anchor_bottom = 2.214
-offset_left = 0.0479736
-offset_top = 182.328
-offset_right = 8.04797
-offset_bottom = 190.328
-
-[node name="TextureRect" type="TextureRect" parent="return"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -13.12
-anchor_top = -26.125
-anchor_right = -13.12
-anchor_bottom = -26.125
-offset_left = -261.04
-offset_right = 208.96
-offset_bottom = 174.0
-texture = ExtResource("3_73icq")
-
-[connection signal="pressed" from="return" to="." method="_on_return_pressed"]
