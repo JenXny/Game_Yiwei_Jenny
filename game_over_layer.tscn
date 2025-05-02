@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://lejqnw0gr5fl"]
+
+[ext_resource type="Script" path="res://game_over_layer.gd" id="1_lymw6"]
+
+[node name="game_over_layer" type="CanvasLayer"]
+script = ExtResource("1_lymw6")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0.639588, 0.0365686, 0.158312, 1)
+self_modulate = Color(0.937178, 0.532538, 0.710176, 1)
+offset_right = 8815.0
+offset_bottom = 4844.0
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.945222, 0.178942, 7.70092e-06, 1)
+self_modulate = Color(0.635009, 0, 0.0282648, 1)
+offset_left = -12812.0
+offset_top = -4942.0
+offset_right = -12132.0
+offset_bottom = -4653.0
+scale = Vector2(50, 50)
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="play" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 3.858
+anchor_top = 5.261
+anchor_right = 3.858
+anchor_bottom = 5.261
+offset_left = -1239.42
+offset_top = -398.128
+offset_right = 1239.58
+offset_bottom = 397.872
