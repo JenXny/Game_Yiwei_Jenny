@@ -34,3 +34,5 @@ offset_left = -1239.42
 offset_top = -398.128
 offset_right = 1239.58
 offset_bottom = 397.872
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
