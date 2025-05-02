@@ -3,32 +3,87 @@
 [ext_resource type="Texture2D" uid="uid://bwwmchmtblddw" path="res://Secondary_Menu.jpg" id="1_4utck"]
 [ext_resource type="Script" path="res://instrcutions.gd" id="1_sfg82"]
 [ext_resource type="Texture2D" uid="uid://dpsy2rlvi2prc" path="res://button_start_idle.png" id="2_03rpp"]
-[ext_resource type="Texture2D" uid="uid://c2htj8l7xt37u" path="res://instructions.png" id="3_ar2lo"]
+[ext_resource type="FontFile" uid="uid://brxip7pq1dpbc" path="res://Tagesschrift-Regular.ttf" id="3_4q1uk"]
 
-[node name="instructions" type="Node2D"]
+[node name="instructions" type="CanvasLayer"]
 script = ExtResource("1_sfg82")
 
-[node name="second menu" type="Sprite2D" parent="."]
-position = Vector2(1448.5, 946)
-scale = Vector2(2.26484, 2.62778)
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -19.0
+offset_right = 94.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_4utck")
 
-[node name="instructions" type="Sprite2D" parent="."]
-position = Vector2(1535, 1231)
-scale = Vector2(0.700784, 0.573333)
-texture = ExtResource("3_ar2lo")
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -11.5
+offset_right = 46.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4q1uk")
+theme_override_font_sizes/font_size = 40
+text = "
+
+
+
+Use AWSD or arrow keys to move"
+
+[node name="Label2" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -11.5
+offset_right = 46.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_4q1uk")
+theme_override_font_sizes/font_size = 40
+text = "How to play"
 
 [node name="start" type="Button" parent="."]
-offset_left = -853.0
-offset_right = -845.0
-offset_bottom = 8.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+action_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="start"]
-layout_mode = 0
-offset_left = 2095.0
-offset_top = 1499.0
-offset_right = 2681.0
-offset_bottom = 1697.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -132.0
+offset_right = 71.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 0
 texture = ExtResource("2_03rpp")
+expand_mode = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

@@ -7,7 +7,7 @@
 script = ExtResource("1_lymw6")
 
 [node name="Panel" type="Panel" parent="."]
-modulate = Color(0.639588, 0.0365686, 0.158312, 1)
+modulate = Color(0.64, 0.0384, 0.15872, 0.956863)
 self_modulate = Color(0.937178, 0.532538, 0.710176, 1)
 anchors_preset = 15
 anchor_right = 1.0

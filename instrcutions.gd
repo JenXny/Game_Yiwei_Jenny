@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 func _ready() -> void:
 	$start.connect("pressed", _on_play_pressed)

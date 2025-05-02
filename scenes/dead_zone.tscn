@@ -12,6 +12,7 @@ one_shot = true
 
 [node name="DeadAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_1aq6f")
+volume_db = -15.139
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
