@@ -52,10 +52,9 @@ anchor_left = -13.12
 anchor_top = -26.125
 anchor_right = -13.12
 anchor_bottom = -26.125
-offset_left = -204.04
-offset_top = -87.0
-offset_right = 265.96
-offset_bottom = 87.0
+offset_left = -261.04
+offset_right = 208.96
+offset_bottom = 174.0
 texture = ExtResource("3_73icq")
 
 [connection signal="pressed" from="return" to="." method="_on_return_pressed"]
