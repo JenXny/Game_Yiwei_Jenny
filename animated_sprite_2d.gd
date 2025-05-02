@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	if Input.is_key_pressed(KEY_A):
 		play("walk")
 		flip_h = true
-	if Input.is_key_pressed(KEY_LEFT):
+	elif Input.is_key_pressed(KEY_LEFT):
 		play("walk")
 		flip_h = true
 	elif Input.is_key_pressed(KEY_D):

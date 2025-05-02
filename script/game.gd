@@ -12,7 +12,6 @@ func _on_body_entered(_body: Node2D) -> void:
 func reset_world():
 	PlayerValues.keys_amount = 0
 	PlayerValues.reset_world
-	get_tree().reload_current_scene()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
