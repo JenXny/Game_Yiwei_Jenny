@@ -7214,7 +7214,7 @@ sources/1 = SubResource("TileSetAtlasSource_hpjt6")
 sources/2 = SubResource("TileSetAtlasSource_gqacw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umb8n"]
-size = Vector2(288, 100)
+size = Vector2(288, 121)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fsq7n"]
 radius = 9.0
@@ -7248,7 +7248,7 @@ tile_set = SubResource("TileSet_l4a56")
 [node name="WinZone" parent="." instance=ExtResource("33_dy2e1")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinZone"]
-position = Vector2(279, 1517)
+position = Vector2(279, 1506.5)
 shape = SubResource("RectangleShape2D_umb8n")
 
 [node name="DeadZone" parent="." instance=ExtResource("11_xg68m")]

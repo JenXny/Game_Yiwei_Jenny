@@ -1,56 +1,44 @@
-[gd_scene load_steps=5 format=3 uid="uid://c1jnqjald5qnw"]
+[gd_scene load_steps=4 format=3 uid="uid://c1jnqjald5qnw"]
 
 [ext_resource type="Script" path="res://win_layer.gd" id="1_gj60x"]
 [ext_resource type="Texture2D" uid="uid://bdlt0ps8tf3i4" path="res://win.jpg" id="2_1p7gk"]
 [ext_resource type="Texture2D" uid="uid://3xf4rn82exvs" path="res://button_return_idle.png" id="3_73icq"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_cxu5u"]
-
 [node name="Win_layer" type="CanvasLayer"]
 script = ExtResource("1_gj60x")
 
-[node name="end screen" type="Sprite2D" parent="."]
-position = Vector2(1458, 962)
-scale = Vector2(1.69773, 1.1125)
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_right = 19.0
+offset_bottom = 139.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_1p7gk")
-
-[node name="Panel" type="Panel" parent="."]
-offset_left = 1133.0
-offset_top = 1227.0
-offset_right = 1821.0
-offset_bottom = 1625.0
-
-[node name="Label" type="Label" parent="."]
-modulate = Color(0.669673, 0.676457, 0.914779, 1)
-self_modulate = Color(0.558408, 0.6152, 0.884193, 1)
-offset_left = -667.0
-offset_top = 750.0
-offset_right = 185.0
-offset_bottom = 1025.0
-scale = Vector2(5, 5)
-text = "You Win!"
-label_settings = SubResource("LabelSettings_cxu5u")
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
+expand_mode = 1
 
 [node name="return" type="Button" parent="."]
-anchors_preset = -1
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.657
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.657
-offset_left = 550.0
-offset_top = 1190.26
-offset_right = 1220.0
-offset_bottom = 1414.26
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -120.0
+offset_right = 4.0
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 0
+action_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="return"]
-layout_mode = 0
-offset_left = 28.0
-offset_top = -11.0
-offset_right = 751.0
-offset_bottom = 237.0
+layout_mode = 1
+offset_left = -96.0
+offset_top = -4.0
+offset_right = 122.0
+offset_bottom = 114.0
 texture = ExtResource("3_73icq")
 
 [connection signal="pressed" from="return" to="." method="_on_return_pressed"]
