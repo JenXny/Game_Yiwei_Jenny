@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://gs3eocxn2fdy"]
+[gd_scene load_steps=4 format=3 uid="uid://gs3eocxn2fdy"]
 
 [ext_resource type="Texture2D" uid="uid://bwwmchmtblddw" path="res://Secondary_Menu.jpg" id="1_4utck"]
 [ext_resource type="Script" path="res://instrcutions.gd" id="1_sfg82"]
-[ext_resource type="Texture2D" uid="uid://dpsy2rlvi2prc" path="res://button_start_idle.png" id="2_03rpp"]
 [ext_resource type="FontFile" uid="uid://brxip7pq1dpbc" path="res://Tagesschrift-Regular.ttf" id="3_4q1uk"]
 
 [node name="instructions" type="CanvasLayer"]
@@ -18,6 +17,8 @@ offset_right = 94.0
 offset_bottom = 53.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource("1_4utck")
 
 [node name="Label" type="Label" parent="TextureRect"]
@@ -33,6 +34,7 @@ offset_right = 46.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4q1uk")
 theme_override_font_sizes/font_size = 40
@@ -55,35 +57,31 @@ offset_right = 46.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_4q1uk")
 theme_override_font_sizes/font_size = 40
 text = "How to play"
 
 [node name="start" type="Button" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-action_mode = 0
-
-[node name="TextureRect" type="TextureRect" parent="start"]
-layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -30.0
-offset_top = -132.0
-offset_right = 71.0
-offset_bottom = -69.0
+offset_left = -41.0
+offset_top = -161.0
+offset_right = 154.0
+offset_bottom = -87.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("2_03rpp")
-expand_mode = 1
+size_flags_horizontal = 10
+size_flags_vertical = 10
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_4q1uk")
+theme_override_font_sizes/font_size = 27
+action_mode = 0
+text = "Start"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

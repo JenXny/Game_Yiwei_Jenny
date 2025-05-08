@@ -42,7 +42,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qfd7c"]
-radius = 143.785
+radius = 217.021
 
 [sub_resource type="Animation" id="Animation_w3cg3"]
 length = 0.001
@@ -120,7 +120,7 @@ autoplay = "default"
 frame_progress = 0.508088
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-61, 80)
+position = Vector2(-53, 38)
 shape = SubResource("CircleShape2D_qfd7c")
 
 [node name="Dialog" type="RichTextLabel" parent="."]
